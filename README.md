@@ -1,14 +1,15 @@
 # EXP-02-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON
 
-AIM:  To interface a digital input (push button) and blink and LED upon activation.
-COMPONENTS REQUIRED:
+## AIM:  
+To interface a digital input (push button) and blink and LED upon activation.
+## COMPONENTS REQUIRED:
 1.	1 KΩ Resistor 
 2.	Arduino Uno 
 3.	Bread board 
 4.	USB Interfacing cable 
 5.	Jumper wires 
 6.	LED of choice 
-THEORY :
+## THEORY :
 Arduino UNO
  	  The Uno is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz quartz crystal, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
 	Technical specifications of Arduino UNO :
@@ -66,16 +67,40 @@ FIGURE -03
 
 
 
-PROGRAM 
- 
- 
- 
- 
- 
+## PROGRAM 
+```
+int ledpin=7;
+int pushpin=2;
+int val=0;
+void setup()
+{
+  pinMode(ledpin, OUTPUT);
+  pinMode(pushpin,INPUT);
+}
 
+void loop()
+{
+  val =digitalRead(pushpin);
+  if(val==0)
+  {
+    digitalWrite(ledpin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledpin,LOW);
+  }
+    
+}
+```
 
 
 Output of the simulation :
+# BEFORE SIMULATION :
+![OUTPUT-01](img-01.PNG)
+# AFTER SIMULATION :
+![OUTPUT-02](img-02.PNG)
 
-[My image](username.github.com/repository/img/image.jpg)
+# RESULT :
+Thus the simulation output is completed in tinker cad successfully.
+
 
